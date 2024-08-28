@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/images/background_et_icones/logo.png" type="image/x-icon">
+    <meta name="description" content="Indiquez votre numéro de chevalet pour être servi à table. Entrez le numéro inscrit sur votre chevalet pour finaliser votre commande dans notre service de restauration rapide.">
+    <title>Indiquez votre numéro de chevalet pour le service à table</title>
+</head>
+<body id="banner-body">
+    <header></header>
+    <main>
+        <section class="numero-chevalet p32 flexwrap flexcolumn justcenter align-center g48">
+            <div class="w30 chevalet-img"><img src="/assets/images/background_et_icones/chevalet.png" alt="Image d'un petit chevalet affichant un numéro à trois chiffres posé sur une table de restaurant en extérieur" class="responsive-img"></div>
+            <p class="chevalet-accroche w100">Pour être servis à table,</p>
+            <h1 class="w100">Récupérez un chevalet et indiquez ici le numéro inscrit dessus</h1>
+            <form action="." class="flexwrap flexcolumn w80 mlra" id="num-commande-form">
+                <label for="num-commande" class="w100"><input type="number" name="num-commande" id="num-commande" class="w100 pl32"></label>
+                <div class="w100 flexwrap spacebetween">
+                    <div class="input-border"></div>
+                    <div class="input-border"></div>
+                    <div class="input-border"></div>
+                </div>
+            </form>
+            <a href="/abientot.html" class="action-btn envoi-commande" title="Accéder à la page de confirmation de paiement de la commande">Enregistrer le numéro</a>
+        </section>
+    </main>
+    <script src="./scripts/envoi_commande.js"></script>
+    <footer></footer>
+</body>
+</html>

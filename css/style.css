@@ -1,0 +1,770 @@
+/*GENERAL*/
+:root{
+    --yellow: #ffc836;
+    --red:#bd0017;
+    --mediumGrey:#d6d6d6;
+    --lightGrey:#f1f1f1;
+    --border:#d6d6d6;
+    --anthracite:#292929;
+    --white:#ffffff;
+    --black:#000000;
+    --shadow:#00000025;
+}
+@font-face {
+    font-family: "Source";
+    src: url(../assets/fonts/source_sans_pro/SourceSans3-VariableFont_wght.ttf);
+}
+body{
+    background-color: var(--white);
+    font-family: "Source";
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-size: 28px;
+    font-weight: 400;
+}
+h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+.bigfont{
+    font-size: 26px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+/*BUTTONS*/
+.action-btn{
+    padding: 16px 32px;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.aband-btn{
+    padding: 16px 32px;
+    background-color: var(--mediumGrey);
+    border: solid 2px var(--black);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.aband-btn:hover{
+    background-color: var(--yellow);
+    border: solid 2px transparent;
+    transition: background-color ease  0.6s, border ease 0.6s;
+}
+.back-btn{
+    padding: 16px 32px;
+    background-color: var(--white);
+    border: solid 1px var(--black);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.back-btn:hover{
+    background-color: var(--yellow);
+    border: solid 1px transparent;
+    transition: background-color ease  0.6s, border ease 0.6s;
+}
+.cross-btn{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.qty-btn{
+    width: 76px;
+    height: 76px;
+    background-color: var(--yellow);
+    border-radius: 8px;
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*CAROUSSELS*/
+.mySwiper {
+    width: 80%;
+    height: 120px;
+}
+.fleche-caroussel {
+    border: none;
+    background-color: transparent;
+}
+.fleche-gauche, .fleche-droite{
+    width: 52px;
+    cursor: pointer;
+}
+.fleche-droite{
+    transform: rotate(180deg);
+}
+.categorie-box{
+    font-size: 18px;
+    border: solid 1px var(--border);
+    border-radius: 8px;
+    height: 100%;
+    width: 120px;
+    cursor: pointer;
+}
+.caroussel-illustration{
+    width: 70px;
+}
+.overlayBoissonSwipper{
+    width: 550px;
+}
+.overlaySauceSwipper{
+    width: 550px;
+}
+/*PAGE INDEX*/
+#banner-body{
+    width: 100%;
+    object-position: center;
+    background-image: url(/assets/images/background_et_icones/mc_landing_banner.png);
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-position-y: 20%;
+    background-size: cover;
+}
+#banner-body ul{
+    list-style: none;
+}
+.choix-consommation{
+    transform: translateY(-50%);
+    width:40%;
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    background-color: var(--white);
+    box-shadow: 4px 4px 12px var(--shadow);
+    border-radius: 16px;
+}
+.bonjour{
+    font-size: 42px;
+    font-weight: bolder;
+}
+.choix-consommation li{
+    border: solid 8px var(--yellow);
+    border-radius: 8px;
+    padding: 24px 0;
+}
+/*PAGE COMPOSITION*/
+/*PANIER*/
+.panier{
+    background-color: var(--mediumGrey);
+    padding: 32px 16px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    max-height: 100vh;
+    transition: transform ease 0.6s;
+}
+.logo-box{
+    width: 32px;
+}
+.numero-commande{
+    font-size: 42px;
+}
+.panier-header{
+    border-bottom: solid 1px var(--black);
+}
+.contenu-commande{
+    max-height: 65vh;
+    overflow-y: scroll;
+}
+.contenu-commande::-webkit-scrollbar {
+    width: 0px;
+}
+.trashbox{
+    width: 24px;
+}
+.prix-total{
+    border-top: solid 1px var(--black);
+}
+.total-panier{
+    font-size: 22px;
+}
+.prix-panier{
+    font-size: 42px;
+}
+.panier-buttons{
+    list-style: none;
+}
+.panier-picto{
+    width: 32px;
+}
+.responsive-panier-close-btn{
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+}
+/*COMPOSITION*/
+.composition{
+    padding: 32px 64px;
+}
+.card-produit{
+    width: 200px;
+    height: 300px;
+    border: solid 1px var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.nom-produit, .prix-produit{
+    font-size: 20px;
+}
+.active-categorie, 
+.active-element, 
+.active-element-accompagnement,
+.active-element-taille,
+.active-element-boisson,
+.active-element-sauce,
+.active-boisson-extra{
+    border: solid 5px var(--yellow) !important;
+}
+.responsive-panier-button{
+    width: 100%;
+    background-color: var(--mediumGrey);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    position: fixed;
+    bottom: 0;
+}
+/*OVERLAYS*/
+.overlay{
+    width: 1000px;
+    height: fit-content;
+    background-color: var(--white);
+    position: fixed;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 40%;
+    border-radius: 16px;
+    border: solid 1px var(--black);
+    z-index: 2;
+    padding: 32px 16px;
+}
+.behind-overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--anthracite);
+    opacity: 0.5;
+    z-index: 1;
+}
+.overlay-title{
+    font-size: 26px;
+    font-weight: bold;
+}
+.overlay-accroche{
+    font-size: 18px;
+    font-weight: bold;
+}
+.overlay ul{
+    list-style: none;
+}
+.overlay li{
+    border-radius: 8px;
+    border: solid 4px var(--border);
+    cursor: pointer;
+}
+.boisson{
+    height: 200px;
+    width: 150px;
+    border: solid 1px var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.boisson-illustration{
+    width: 130px;
+}
+.sauce{
+    height: 200px;
+    width: 150px;
+    border: solid 1px var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.sauce-illustration{
+    width: 130px;
+}
+.counter-boisson,
+.counter-extra{
+    font-size: 40px;
+    font-weight: bold;
+}
+/*PAGE CHEVALET ET PAGE A BIENTOT*/
+.numero-chevalet,
+.abientot{
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 4px 4px 12px var(--shadow);
+}
+.numero-chevalet{
+    width: 600px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+.chevalet-accroche{
+    font-size: 42px;
+    font-weight: bold;
+}
+.numero-chevalet h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+#num-commande{
+    height: 150px;
+    font-size: 120px;
+    letter-spacing: 84px;
+    border: none;
+}
+.input-border{
+    width: 30%;
+    height: 16px;
+    background-color: var(--mediumGrey);
+}
+.chevalet-img{
+    border-radius: 16px;
+    box-shadow: 4px 4px 12px var(--shadow);
+}
+.chevalet-img img{
+    border-radius: 16px;
+}
+.abientot{
+    width: 650px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 35%;
+}
+.new-commande{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    bottom: 24px;
+}
+
+/*RESPONSIVE*/
+@media all and (max-width: 580px){
+    /*PAGE INDEX*/
+    #banner-body{
+        background-size: auto;
+    }
+    .choix-consommation{
+        width:90%;
+        gap: 16px;
+        left: 5%;
+        top: 50%;
+        background-color: var(--white);
+        box-shadow: 4px 4px 12px var(--shadow);
+        border-radius: 16px;
+        height: fit-content;
+    }
+    .choix-consommation h1{
+        font-size: 18px;
+    }
+    .bonjour{
+        font-size: 28px;
+        font-weight: bolder;
+    }
+    .choix-consommation ul{
+        gap: 16px;
+    }
+    .choix-consommation li{
+        width: 100%;
+    }
+    /*PAGE COMPOSITION*/
+    .panier{
+        position: fixed;
+        width: 100vw;
+        z-index: 1;
+        top: 100vh;
+    }
+    .composition{
+        width: 100%;
+        padding: 8px;
+    }
+    .mySwiper {
+        width: 70%;
+        height: 120px;
+        position: sticky;
+        top: 0;
+    }
+    .caroussel{
+        margin-bottom: 16px;
+    }
+    .liste-produits-categorie{
+        justify-content: center;
+    }
+    .overlay{
+        width: 95%;
+        left: 50%;
+        padding: 16px;
+    }
+    .overlay-content{
+        padding: 0;
+        width: 100%;
+    }
+    .overlay li{
+        width: 80%;
+    }
+    .overlay-boisson{
+        width: 100%;
+    }
+    .overlayBoissonSwipper{
+        width: 50%;
+    }
+    .overlay-sauce{
+        width: 100%;
+    }
+    .overlaySauceSwipper{
+        width: 50%;
+    }
+    /*PAGE CHEVALET ET A BIENTOT*/
+    .numero-chevalet{
+        width: 90%;
+        padding: 16px;
+    }
+    .chevalet-accroche{
+        font-size: 24px;
+    }
+    .numero-chevalet h1{
+        font-size: 18px;
+    }
+    #num-commande{
+        height: 120px;
+        font-size: 100px;
+        letter-spacing: 28px;
+        text-align: center;
+        padding-left: 8px;
+    }
+    .abientot{
+        width: 95%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+    }
+    .abientot p{
+        font-size: 20px;
+    }
+    .abientot h1{
+        font-size: 20px;
+    }
+    .new-commande{
+        position: absolute;
+        width: 250px;
+        text-align: center;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        bottom: 24px;
+    }
+   
+}
+/*RESPONSIVE*/
+@media all and (min-width: 581px) and (max-width: 860px){
+    /*PAGE INDEX*/
+    #banner-body{
+        background-size: auto;
+    }
+    .choix-consommation{
+        width:90%;
+        gap: 16px;
+        left: 5%;
+        top: 50%;
+    }
+    .choix-consommation h1{
+        font-size: 20px;
+    }
+    .bonjour{
+        font-size: 32px;
+    }
+    .choix-consommation ul{
+        gap: 16px;
+        justify-content: center;
+    }
+    .choix-consommation li{
+        width: 70%;
+    }
+    /*PAGE COMPOSITION*/
+    .panier{
+        position: fixed;
+        width: 100vw;
+        z-index: 1;
+        top: 100vh;
+    }
+    .composition{
+        width: 100%;
+        padding: 8px;
+    }
+    .mySwiper {
+        width: 70%;
+        height: 120px;
+        position: sticky;
+        top: 0;
+    }
+    .caroussel{
+        margin-bottom: 16px;
+    }
+    .liste-produits-categorie{
+        justify-content: center;
+    }
+    .overlay{
+        width: 80%;
+        left: 50%;
+        padding: 16px;
+    }
+    .overlay-content{
+        padding: 0;
+        width: 100%;
+    }
+    .overlay li{
+        width: 60%;
+    }
+    .overlay-boisson{
+        width: 100%;
+    }
+    .overlayBoissonSwipper{
+        width: 50%;
+    }
+    .overlay-sauce{
+        width: 100%;
+    }
+    .overlaySauceSwipper{
+        width: 50%;
+    }
+    /*PAGE CHEVALET ET A BIENTOT*/
+    .numero-chevalet{
+        width: 90%;
+        padding: 16px;
+    }
+    .chevalet-accroche{
+        font-size: 24px;
+    }
+    .numero-chevalet h1{
+        font-size: 18px;
+    }
+    #num-commande{
+        height: 120px;
+        font-size: 100px;
+        letter-spacing: 28px;
+        text-align: center;
+        padding-left: 8px;
+    }
+    .abientot{
+        width: 95%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+    }
+    .abientot p{
+        font-size: 20px;
+    }
+    .abientot h1{
+        font-size: 20px;
+    }
+    .new-commande{
+        position: absolute;
+        text-align: center;
+        bottom: 24px;
+    }
+}
+@media all and (min-width: 861px) and (max-width: 1080px){
+    /*PAGE INDEX*/
+    #banner-body{
+        background-size: auto;
+    }
+    .choix-consommation{
+        width:70%;
+        gap: 16px;
+        left: 15%;
+        top: 50%;
+    }
+    .choix-consommation h1{
+        font-size: 20px;
+    }
+    .bonjour{
+        font-size: 32px;
+    }
+    .choix-consommation ul{
+        gap: 16px;
+        justify-content: center;
+    }
+    .choix-consommation li{
+        width: 40%;
+    }
+    /*PAGE COMPOSITION*/
+    .composition{
+        width: 70%;
+        padding: 8px;
+    }
+    .panier{
+        width: 30%;
+    }
+    .panier-buttons li{
+        width: 40%;
+        font-size: 16px;
+    }
+    .prix-panier{
+        font-size: 24px ;
+    }
+    .mySwiper {
+        width: 70%;
+        height: 120px;
+        position: sticky;
+        top: 0;
+    }
+    .caroussel{
+        margin-bottom: 16px;
+    }
+    .liste-produits-categorie{
+        justify-content: center;
+    }
+    .overlay{
+        width: 80%;
+        left: 50%;
+        padding: 16px;
+    }
+    .overlay-content{
+        padding: 0;
+        width: 100%;
+    }
+    .overlay li{
+        width: 40%;
+    }
+    .overlay-boisson{
+        width: 100%;
+    }
+    .overlayBoissonSwipper{
+        width: 50%;
+    }
+    .overlay-sauce{
+        width: 100%;
+    }
+    .overlaySauceSwipper{
+        width: 50%;
+    }
+    /*PAGE CHEVALET ET A BIENTOT*/
+    .numero-chevalet{
+        width: 70%;
+        padding: 16px;
+    }
+    .chevalet-accroche{
+        font-size: 24px;
+    }
+    .numero-chevalet h1{
+        font-size: 18px;
+    }
+    #num-commande{
+        height: 120px;
+        font-size: 100px;
+        letter-spacing: 28px;
+        text-align: center;
+        padding-left: 8px;
+    }
+    .abientot{
+        width: 95%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+    }
+    .abientot p{
+        font-size: 20px;
+    }
+    .abientot h1{
+        font-size: 20px;
+    }
+    .new-commande{
+        position: absolute;
+        text-align: center;
+        bottom: 24px;
+    }
+}
+@media all and (min-width: 1081px) and (max-width: 1400px){
+    /*PAGE INDEX*/
+    #banner-body{
+        background-size: auto;
+    }
+    .choix-consommation{
+        width:70%;
+        gap: 32px;
+        left: 15%;
+        top: 50%;
+    }
+    .choix-consommation h1{
+        font-size: 20px;
+    }
+    .bonjour{
+        font-size: 32px;
+    }
+    .choix-consommation ul{
+        gap: 32px;
+        justify-content: center;
+    }
+    .choix-consommation li{
+        width: 40%;
+    }
+    /*PAGE COMPOSITION*/
+    .composition{
+        width: 70%;
+        padding: 8px;
+    }
+    .panier{
+        width: 30%;
+    }
+    .panier-buttons li{
+        width: 40%;
+        font-size: 16px;
+    }
+    .prix-panier{
+        font-size: 24px ;
+    }
+    .mySwiper {
+        width: 70%;
+        height: 120px;
+        position: sticky;
+        top: 0;
+    }
+    .caroussel{
+        margin-bottom: 16px;
+    }
+    .liste-produits-categorie{
+        justify-content: center;
+    }
+    .overlay{
+        width: 80%;
+        left: 50%;
+        padding: 16px;
+    }
+    .overlay-content{
+        padding: 0;
+        width: 100%;
+    }
+    .overlay li{
+        width: 40%;
+    }
+    .overlay-boisson{
+        width: 100%;
+    }
+    .overlayBoissonSwipper{
+        width: 50%;
+    }
+    .overlay-sauce{
+        width: 100%;
+    }
+    .overlaySauceSwipper{
+        width: 50%;
+    }
+}

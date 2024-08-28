@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+    <link rel="shortcut icon" href="./assets/images/background_et_icones/logo.png" type="image/x-icon">
+    <meta name="description" content="Restauration rapide : Composez votre commande. Découvrez notre sélection de burgers, boissons, desserts, wraps et accompagnements, et personnalisez votre repas selon vos préférences.">
+    <title>Restauration rapide - Composez votre menu</title>
+</head>
+<body id="composition-body">
+    <header></header>
+    <main class="flexwrap">
+        <!-- SECTION COMPOSITION -->
+        <section aria-label="Composition du menu" class="composition w80">
+            <!-- CAROUSSEL -->
+            <div aria-label="Carrousel des catégories de produits" role="region" aria-roledescription="Carrousel" class="caroussel flexwrap spacebetween align-center mb48">
+                <!-- BOUTTON DE NAVIGATION GAUCHE -->
+                <button aria-controls="top-carousel" aria-label="Diapositive précédente" class="fleche-caroussel fleche-gauche" id="prev-btn">
+                    <img src="./assets/images/background_et_icones/fleche-slider.png" alt="Icone en forme de flèche de couleur rouge tournée vers la gauche">
+                </button>
+                <!-- ELEMENTS DU CAROUSSEL -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper caroussel-categorie" id="top-carousel">
+                    </div>
+                </div>
+                <!-- BOUTTON DE NAVIGATION DROITE -->
+                <button aria-controls="top-carousel" aria-label="Diapositive suivante" class="fleche-caroussel fleche-droite" id="next-btn">
+                    <img src="./assets/images/background_et_icones/fleche-slider.png" alt="Icone en forme de flèche de couleur rouge tournée vers la droite">
+                </button>
+            </div>
+            <!-- DETAIL DE LA CATEGORIE SELECTIONNEE -->
+            <div class="detail-categorie w100 flexwrap cont1200">
+                <!-- TITRE ET ACCROCHE -->
+                <div class="titre-categorie mb32 w100">
+                    <h2>Nos menus</h2>
+                    <p>Un sandwich, une friture ou une salade et une boisson</p>
+                </div>
+                <!-- CARTES PRODUIT -->
+                <div class="liste-produits-categorie flexwrap g24">
+                    <!-- Ici les cartes produits généré dynamiquement  -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PANIER -->
+        <section itemscope itemtype="http://schema.org/Order" aria-label="Panier et récapitulatif de commande" class="panier flexwrap spacebetween flexcolumn w20">
+            <!-- EN-TETE -->
+            <div class="main-content">
+                <div class="logo-box mlra mb32">
+                    <img src="./assets/images/background_et_icones/logo.png" alt="logo de l'entreprise Wacdo représentant la lettre W de couleur jaune">
+                </div>
+                <div class="panier-header flexwrap spacebetween align-center">
+                    <div class="infos-commande">
+                        <p>Commande numéro</p>
+                        <p class="choix-conso">Sur place : <b>326</b></p>
+                    </div>
+                    <p itemprop="orderNumber" class="numero-commande">72</p>
+                </div>
+                <!-- CONTENU DE LA COMMANDE -->
+                <div class="contenu-commande pt16 flexwrap g8">
+                    <!-- Contenue généré dynamiquement -->
+                </div>
+            </div>
+            <!-- TOTAL -->
+            <div class="panier-footer">
+                <div itemprop="totalPaymentDue" itemscope itemtype="http://schema.org/PriceSpecification" class="prix-total flexwrap spacebetween align-center mb32">
+                    <p class="total-panier">Total (ttc)</p>
+                    <p itemprop="price" class="prix-panier"></p>
+                </div>
+                <ul class="panier-buttons w100 flexwrap spacebetween">
+                    <li><a class="aband-btn" href="/index.html" title="Accès à la page permettant de choisir le lieu de consommation">Abandon</a></li>
+                   <li><a class="action-btn pay-button" href="/chevalet.html" title="Accès à la page permettant de donner son numéro de commande ou son numéro de chevalet">Payer</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- OVERLAYS APPARAISSANT LORS DE LA CONSTRUCTION DE LA COMMANDE -->
+        <section class="overlay d-none" aria-label="Options de menu et extras">
+            <!-- CHOIX DE LA TAILLE DU MENU -->
+            <div class="flexwrap g32 d-none" id="overlay-etape-1">
+                <div class="top-btn flexwrap spacebetween w100">
+                    <div></div>
+                    <div class="cross-btn">
+                        <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle" class="responsive-img">
+                    </div>
+                </div>
+                <div class="overlay-content pl128 pr128 flexwrap g32">
+                    <div class="overlay-text w100">
+                        <p class="overlay-title">Une grosse faim ?</p>
+                        <p class="overlay-accroche">Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl</p>
+                    </div>
+                    <ul class="flexwrap justcenter w100 g32">
+                        <li class="w45 flexwrap flexcolumn align-center justend active-element-taille taille-menu" data-taille="maxi">
+                            <div class="w45"><img src="./assets/images/background_et_icones/illustration-maxi-best-of.png" alt="Image représentant un cornet de frite de grande taille, un gobelet de soda de grande taille, ainsi qu'un burger. Tous ces éléments sont disposés l'un à coté de l'autre" class="responsive-img"></div>
+                            <p class="bigfont">Menu maxi best-of</p>
+                        </li>
+                        <li class="w45 flexwrap flexcolumn align-center justend taille-menu" data-taille="normal">
+                            <div class="w40"><img src="./assets/images/background_et_icones/illustration-best-of.png" alt="Image représentant un cornet de frite de moyenne taille, un gobelet de soda de moyenne taille, ainsi qu'un burger. Tous ces éléments sont disposés l'un à coté de l'autre" class="responsive-img"></div>
+                            <p class="bigfont">Menu best-of</p>
+                        </li>
+                    </ul>
+                </div>
+                <button class="next-step mlra action-btn">Etape suivante</button>
+            </div>
+            <!-- CHOIX DE L'ACCOMPAGNEMENT DU MENU-->
+            <div class="flexwrap g32 d-none" id="overlay-etape-2">
+                <div class="top-btn flexwrap spacebetween w100">
+                    <div>
+                        <button class="back-btn prev-step">Retour</button>
+                    </div>
+                    <div class="cross-btn">
+                        <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle" class="responsive-img">
+                    </div>
+                </div>
+                <div class="overlay-content pl128 pr128 flexwrap g32">
+                    <div class="overlay-text w100">
+                        <p class="overlay-title">Choisissez votre accompagnement</p>
+                        <p class="overlay-accroche">Frites, potatoes, la pomme de terre dans tous ses états</p>
+                    </div>
+                    <ul class="flexwrap justcenter w100 g32">
+                        <li class="w45 flexwrap flexcolumn align-center justend active-element-accompagnement accompagnement-menu" data-accompagnement="Frites">
+                            <div class="w45"><img src="./assets/images/frites/MOYENNE_FRITE.png" alt="Image d'un cornet de frites" class="responsive-img"></div>
+                            <p class="bigfont">Frites</p>
+                        </li>
+                        <li class="w45 flexwrap flexcolumn align-center justend accompagnement-menu" data-accompagnement="Potatoes">
+                            <div class="w45"><img src="./assets/images/frites/GRANDE_POTATOES.png" alt="Image d'un cornet de potatoes" class="responsive-img"></div>
+                            <p class="bigfont">Potatoes</p>
+                        </li>
+                    </ul>
+                </div>
+                <button class="next-step mlra action-btn">Etape suivante</button>
+            </div>
+            <!-- CHOIX DE LA BOISSON DU MENU-->
+            <div class="flexwrap g32 d-none" id="overlay-etape-3">
+                <div class="top-btn flexwrap spacebetween w100">
+                    <div>
+                        <button class="back-btn prev-step">Retour</button>
+                    </div>
+                    <div class="cross-btn">
+                        <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle" class="responsive-img">
+                    </div>
+                </div>
+                <div class="overlay-content pl128 pr128 flexwrap g32">
+                    <div class="overlay-text w100">
+                        <p class="overlay-title">Choisissez votre boisson</p>
+                        <p class="overlay-accroche">Un soda , un jus de fruit ou un verre d’eau pour accompagner votre repas</p>
+                    </div>
+                    <div aria-label="Carrousel des boissons disponibles" role="region" aria-roledescription="Carrousel boissons" class="overlay-boisson flexwrap align-center g24 mb48">
+                        <!-- BOUTTON DE NAVIGATION GAUCHE -->
+                        <button aria-controls="boisson-carousel" aria-label="Diapositive précédente" class="fleche-caroussel fleche-gauche" id="overlay-boisson-prev-btn">
+                            <img src="./assets/images/background_et_icones/fleche-slider.png" alt="Icone en forme de flèche de couleur rouge tournée vers la gauche">
+                        </button>
+                        <!-- ELEMENTS DU CAROUSSEL -->
+                        <div class="swiper overlayBoissonSwipper">
+                            <div class="swiper-wrapper overlay-caroussel-boissons" id="boisson-carousel">
+                            </div>
+                        </div>
+                        <!-- BOUTTON DE NAVIGATION DROITE -->
+                        <button aria-controls="boisson-carousel" aria-label="Diapositive suivante" class="fleche-caroussel fleche-droite" id="overlay-boisson-next-btn">
+                            <img src="./assets/images/background_et_icones/fleche-slider.png" alt="Icone en forme de flèche de couleur rouge tournée vers la droite">
+                        </button>
+                    </div>
+                </div>
+                <button class="next-step mlra action-btn">Etape suivante</button>
+            </div>
+            <!-- CHOIX DE LA SAUCE DU MENU-->
+            <div class="flexwrap g32 d-none" id="overlay-etape-4">
+                <div class="top-btn flexwrap spacebetween w100">
+                    <div>
+                        <button class="back-btn prev-step">Retour</button>
+                    </div>
+                    <div class="cross-btn">
+                        <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle" class="responsive-img">
+                    </div>
+                </div>
+                <div class="overlay-content pl128 pr128 flexwrap g32">
+                    <div class="overlay-text w100">
+                        <p class="overlay-title">Choisissez votre sauce</p>
+                        <p class="overlay-accroche">Rehaussez vos plats avec nos sauces, onctueuses et variées</p>
+                    </div>
+                    <div aria-label="Carrousel des sauces disponibles" role="region" aria-roledescription="Carrousel sauces" class="overlay-sauce flexwrap align-center g24 mb48">
+                        <!-- BOUTTON DE NAVIGATION GAUCHE -->
+                        <button aria-controls="sauce-carousel" aria-label="Diapositive précédente" class="fleche-caroussel fleche-gauche" id="overlay-sauce-prev-btn">
+                            <img src="./assets/images/background_et_icones/fleche-slider.png" alt="Icone en forme de flèche de couleur rouge tournée vers la gauche">
+                        </button>
+                        <!-- ELEMENTS DU CAROUSSEL -->
+                        <div class="swiper overlaySauceSwipper" id="sauce-carousel">
+                            <div class="swiper-wrapper overlay-caroussel-sauces">
+                            </div>
+                        </div>
+                        <!-- BOUTTON DE NAVIGATION DROITE -->
+                        <button aria-controls="sauce-carousel" aria-label="Diapositive suivante" class="fleche-caroussel fleche-droite" id="overlay-sauce-next-btn">
+                            <img src="./assets/images/background_et_icones/fleche-slider.png" alt="Icone en forme de flèche de couleur rouge tournée vers la droite">
+                        </button>
+                    </div>
+                </div>
+                <button class="final-step mlra action-btn">Ajouter le menu à ma commande</button>
+            </div>
+            <!-- CHOIX DE LA BOISSON SEULE (EXTRA) -->
+            <div class="flexwrap g32 d-none" id="overlay-etape-5">
+                <div class="top-btn flexwrap spacebetween w100">
+                    <div></div>
+                    <div class="cross-btn">
+                        <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle" class="responsive-img">
+                    </div>
+                </div>
+                <div class="overlay-content pl128 pr128 flexwrap g32">
+                    <div class="overlay-text w100">
+                        <p class="overlay-title">Une petite soif ?</p>
+                        <p class="overlay-accroche">Choisissez la taille de votre boisson, +0.50€ pour le format 50 Cl
+                        </p>
+                    </div>
+                    <ul class="flexwrap justcenter w100 g32">
+                        <li class="w45 flexwrap flexcolumn align-center justend active-boisson-extra boisson-extra" data-taille="petite">
+                            <div class="w35"><img src="./assets/images/boissons/coca-cola.png" alt="Image représentant un gobelet de boisson de 30 centilitres" class="responsive-img boisson-extra-image"></div>
+                            <p class="bigfont">30Cl</p>
+                        </li>
+                        <li class="w45 flexwrap flexcolumn align-center justend boisson-extra" data-taille="grande">
+                            <div class="w45"><img src="./assets/images/boissons/coca-cola.png" alt="Image représentant un gobelet de boisson de 50 centilitres" class="responsive-img boisson-extra-image"></div>
+                            <p class="bigfont">50Cl</p>
+                        </li>
+                    </ul>
+                </div>
+                <div role="group" aria-label="Sélecteur de quantité pour la boisson" class="quantity-btns flexwrap justcenter w100 g64 align-center">
+                    <button aria-label="Réduire la quantité de boisson" aria-controls="boisson-counter" class="qty-btn moins-btn-boisson">-</button>
+                    <p class="counter-boisson" id="boisson-counter" aria-live="polite">1</p>
+                    <button aria-label="Augmenter la quantité de boisson" aria-controls="boisson-counter" class="qty-btn plus-btn-boisson">+</button>
+                </div>
+                <button class="add-extra action-btn mlra">Ajouter à ma commande</button>
+            </div>
+            <!-- CHOIX D'UN AUTRE EXTRA -->
+            <div class="flexwrap g32 d-none" id="overlay-etape-6">
+                <div class="top-btn flexwrap spacebetween w100">
+                    <div></div>
+                    <div class="cross-btn">
+                        <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle" class="responsive-img">
+                    </div>
+                </div>
+                <div class="overlay-content pl128 pr128 flexwrap g32 justcenter w100">
+                    <div class="overlay-text w100">
+                        <p class="overlay-title">Une petit extra ?</p>
+                        <p class="overlay-accroche">Choisissez la quantité selon votre faim</p>
+                    </div>
+                    <div class="w45 flexwrap flexcolumn align-center justcenter extra">
+                        <div class="w50">
+                            <img src="./" alt="lorem" class="responsive-img extra-image"> <!-- Source et alt générés dynamiquement -->
+                        </div>
+                        <p class="bigfont extra-name"></p>
+                    </div>
+                </div>
+                <div role="group" aria-label="Sélecteur de quantité pour un extra" class="quantity-btns flexwrap justcenter w100 g64 align-center">
+                    <button aria-label="Réduire la quantité de l'extra" aria-controls="extra-counter" class="qty-btn moins-btn-extra">-</button>
+                    <p class="counter-extra" id="extra-counter" aria-live="polite">1</p>
+                    <button aria-label="Augmenter la quantité de l'extra" aria-controls="extra-counter" class="qty-btn plus-btn-extra">+</button>
+                </div>
+                <button class="add-extra action-btn mlra">Ajouter à ma commande</button>
+            </div>
+        </section>
+        <!-- FOND GRIS DERRIERE L'OVERLAY LORSQUE CE DERNIER EST ACTIF -->
+        <div class="behind-overlay d-none"></div>
+        <!-- BOUTTONS POUR AFFICHER/CACHER LE PANIER LORS D'UN AFFICHAGE RESPONSIVE -->
+        <div class="responsive-panier-button flexwrap justcenter p8 aligncenter">
+            <div class="panier-picto"><img src="./assets/images/background_et_icones/panier.png" alt="icone représentant un caddie correspondant au panier de la commande" class="responsive-img"></div>
+        </div>
+        <div class="responsive-panier-close-btn d-none">
+            <img src="./assets/images/background_et_icones/supprimer.png" alt="Icone représentant une croix inscrite dans un cercle">
+        </div>
+    </main>
+    <footer></footer>
+    <script src="./node_modules/swiper/swiper-bundle.min.js" defer></script>
+    <script src="./scripts/composition.js" defer></script>
+</body>
+</html>

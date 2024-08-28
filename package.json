@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "sass": "^1.77.8",
+    "swiper": "^11.1.9"
+  },
+  "scripts": {
+    "build-css": "sass scss/main.scss css/main.css",
+    "watch-css": "sass --watch scss/main.scss:css/main.css"
+  }
+}

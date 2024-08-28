@@ -1,0 +1,73 @@
+/*CLASSES FONCTIONNELLES*/
+.cont1200{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cont1400{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.flexwrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexcolumn{
+    flex-direction: column;
+}
+.spacebetween{
+    justify-content: space-between;
+}
+.spacearound{
+    justify-content: space-around;
+}
+.spaceevenly{
+    justify-content: space-evenly;
+}
+.juststart{
+    justify-content: start;
+}
+.justend{
+    justify-content: end;
+}
+.justcenter{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.align-start{
+    align-items: start;
+}
+.align-end{
+    align-items: end;
+}
+.textcenter{
+    text-align: center;
+}
+.responsive-img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.pos-rel{
+    position: relative;
+}
+.pos-abs{
+    position: absolute;
+}
+.pos-fixed{
+    position: fixed;
+}
+.pos-sticky{
+    position: sticky;
+}
+.d-none{
+    display: none;
+}
+.mlra{
+    margin-left: auto;
+    margin-right: auto;
+}
